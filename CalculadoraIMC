@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Calculador_IMC
+{
+    internal class Program
+    {
+        public static object MessageBox { get; private set; }
+
+        static void Main(string[] args)
+        {
+            Console.WriteLine("Informe seu nome");
+            string nome = (Console.ReadLine());
+
+            Console.WriteLine("Informe seu peso em Kg");
+            double peso = double.Parse(Console.ReadLine());
+
+            Console.WriteLine();
+
+            Console.WriteLine("Informe sua altura em metros");
+            double altura = double.Parse(Console.ReadLine());
+
+            double IMC = peso / (altura * altura);
+
+                             
+
+            if (IMC < 20)
+            {
+                Console.WriteLine("\n" + nome  + " seu IMC = " + IMC.ToString("F2") + " -> Abaixo do peso");
+            }
+            else if (IMC >= 20 && IMC <= 24)
+            {
+                Console.WriteLine("\n" + nome + " seu IMC = " + IMC.ToString("F2") + " -> Peso normal");
+            }
+            else if (IMC >= 25 && IMC <= 29)
+            {
+                Console.WriteLine("\n" + nome + " seu IMC = " + IMC.ToString("F2") + " -> Acima do peso");
+            }
+            else if (IMC >= 30 && IMC <= 34)
+            {
+                Console.WriteLine("\n" + nome + " seu IMC = " + IMC.ToString("F2") + " -> Obeso");
+            }
+            else
+            {
+                Console.WriteLine("\n" + nome + " seu IMC = " + IMC.ToString("F2") + " -> Muito obeso");
+            }
+
+                Console.ReadKey();
+        }
+    }
+}
